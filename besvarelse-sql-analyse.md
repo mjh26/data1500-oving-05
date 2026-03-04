@@ -7,12 +7,17 @@
 4.  `SELECT Fornavn, Etternavn, Stilling AS Jobbtittel FROM Ansatt;`
 
 1.  **Forklaring:** ...
+Velge alle data fra tabellen Vare.
 
 2.  **Forklaring:** ...
+Velge data med kolonnene varenummer og betegnelse fra tabellen Vare.
 
 3.  **Forklaring:** ...
+Velge data uten duplikater fra kolonenne kategorinr fra tabellen Vare.
 
 4.  **Forklaring:** ...
+Velge data fra kolonnene fornavn, etternavn og jobbtittel (istedenfor stilling) fra tabellen Ansatt.
+
 
 ## Oppgave 2: WHERE-klausulen
 1.  `SELECT * FROM Vare WHERE Pris > 500;`

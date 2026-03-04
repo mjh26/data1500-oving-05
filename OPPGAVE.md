@@ -116,7 +116,7 @@ networks:
 
 OBS! For å kunne løse oppgavene 5 og 6, må man utvide databaseskjema for hobbyhuset og legge inn noen testdata. Det kan gjøres med følgende kommandoen fra mappen hvor denne filen ligger:
 ```bash
-docker-compose exec postgres psql -U admin -d hobbyhuset -f test-scripts/hobbyhuset_utvidet_05-6.sql
+docker-compose exec postgres psql -U admin -d hobbyhuset -f test-scripts/hobbyhuset_utvidet_o5-6.sql
 ```
 
 
