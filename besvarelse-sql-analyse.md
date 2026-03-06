@@ -13,7 +13,7 @@ Velge alle data fra tabellen Vare.
 Velge data med kolonnene varenummer og betegnelse fra tabellen Vare.
 
 3.  **Forklaring:** ...
-Velge data uten duplikater fra kolonenne kategorinr fra tabellen Vare.
+Velge data uten duplikater fra kolonnen kategorinr fra tabellen Vare.
 
 4.  **Forklaring:** ...
 Velge data fra kolonnene fornavn, etternavn og jobbtittel (istedenfor stilling) fra tabellen Ansatt.
@@ -26,12 +26,16 @@ Velge data fra kolonnene fornavn, etternavn og jobbtittel (istedenfor stilling) 
 4.  `SELECT Betegnelse FROM Vare WHERE NOT KatNr = 1;
 
 1.  **Forklaring:** ...
+Velge alle data fra tabell Vare hvor pris er over 500.
 
 2.  **Forklaring:** ...
+Velge alle data fra tabell Ansatt hvor stilling er salgssjef med årslønn over 600000.
 
 3.  **Forklaring:** ...
+Velge fornavn, etternavn i tabell Kunde hvor postnr er 0001 eller 0002.
 
 4.  **Forklaring:** ...
+Velge betegnelse fra tabell Vare hvor kategorinr ikke er 1.
 
 ## Oppgave 3: Gruppering og Sortering
 1.  `SELECT * FROM Vare ORDER BY Pris DESC;`
@@ -40,12 +44,16 @@ Velge data fra kolonnene fornavn, etternavn og jobbtittel (istedenfor stilling) 
 4.  `SELECT KatNr, SUM(Antall) FROM Vare GROUP BY KatNr HAVING SUM(Antall) > 500;`
 
 1.  **Forklaring:** ...
+Velge alle data fra tabell varer og sorterer dem synkende etter pris.
 
 2.  **Forklaring:** ...
+Velge varene etter kategorinr og teller hvor mange varer som finnes i hvert rad i tabell vare.
 
 3.  **Forklaring:** ...
+Velge ansatte etter stilling og finner gjennomsnttlig årslønn fra tabell ansatt.
 
 4.  **Forklaring:** ...
+Velge varene etter kategorinr, summerer antall varer i hvert rad og viser kun summen som er større enn 500.  
 
 ## Oppgave 4: Spørringer mot Flere Tabeller
 1.  `SELECT V.Betegnelse, K.Navn FROM Vare V JOIN Kategori K ON V.KatNr = K.KatNr;`
