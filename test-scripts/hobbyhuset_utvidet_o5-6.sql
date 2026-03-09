@@ -24,4 +24,4 @@ UPDATE Kunde SET Telefon = '41234567' WHERE KNr IN (5129, 5042);
 -- Oppdater ErBetalt-kolonnen for å illustrere tre-verdi logikk
 UPDATE Ordre SET ErBetalt = TRUE WHERE BetaltDato IS NOT NULL;
 UPDATE Ordre SET ErBetalt = FALSE WHERE BetaltDato IS NULL AND SendtDato IS NOT NULL;
-UPDATE Ordre SET ErBet alt = NULL WHERE OrdreNr % 10 = 0;
+UPDATE Ordre SET ErBetalt = NULL WHERE OrdreNr % 10 = 0;

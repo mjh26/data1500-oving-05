@@ -62,12 +62,16 @@ Velge varene etter kategorinr, summerer antall varer i hvert rad og viser kun su
 4.  `SELECT V.Betegnelse FROM Vare V WHERE V.VNr NOT IN (SELECT VNr FROM Ordrelinje);`
 
 1.  **Forklaring:** ...
+Velge varer sammen med navnet på kategori som kobles til kategorinr.
 
 2.  **Forklaring:** ...
+Velge alle ordre sammen med navnet til kundene, selvom kundens navn mangler. 
 
 3.  **Forklaring:** ...
+Velge to ansatte som bor i samme postnummer, men tar ikke med duplikater. 
 
 4.  **Forklaring:** ...
+Velge varer som ikke har blitt bestilt ved å sjekke om varenr ikke finnes i ordrelinje.
 
 ## Oppgave 5: NULL-verdier og Aggregeringsfunksjoner
 

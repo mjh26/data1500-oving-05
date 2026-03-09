@@ -55,3 +55,22 @@ SELECT KatNr, SUM(antall) AS totalt_varer FROM Vare GROUP BY KatNr HAVING SUM(an
 --6.Finn den eldste og yngste ansatte.
 SELECT * FROM Ansatt ORDER BY fødselsdato ASC LIMIT 1;
 SELECT * FROM Ansatt ORDER BY fødselsdato DESC LIMIT 1;
+
+--Oppgave 4 del 2
+--1.Finn navn på alle kunder og poststedet de bor i. Vis kun de første 20 rader fra resultatrelasjon.
+SELECT K.Fornavn, K.Etternavn, P.Poststed FROM Kunde K JOIN Poststed P ON K.PostNr = P.PostNr LIMIT 20;
+
+--2.Finn navn på alle varer og navnet på kategorien de tilhører. Vis kun de første 20 rader fra resultatrelasjon.
+SELECT V.Betegnelse, K.Navn AS Kategori FROM Vare V JOIN Kategori K ON V.KatNr = K.KatNr LIMIT 20;
+
+--3.Finn alle ordrer med kundenavn og ordredato. Vis kun de første 20 rader fra resultatrelasjon.
+SELECT O.OrdreNr, O.OrdreDato, K.Fornavn, K.Etternavn FROM Ordre O JOIN Kunde K ON O.KNr = K.KNr LIMIT 20;
+
+--4.Finn alle varer som aldri har blitt solgt (dvs. ikke finnes i `Ordrelinje`).
+SELECT V.Betegnelse FROM Vare V WHERE V.VNr NOT IN (SELECT VNr FROM Ordrelinje);
+
+--5.Finn totalt antall solgte enheter for hver vare (bruk `Ordrelinje`).
+SELECT V.Betegnelse, SUM(O.Antall) AS TotaltSolgt FROM Vare V JOIN Ordrelinje O ON V.VNr = O.VNr GROUP BY V.Betegnelse;
+
+--6.Finn navnet på alle ansatte som bor i Bø i Telemark.
+SELECT A.Fornavn, A.Etternavn FROM Ansatt A JOIN Poststed P ON A.PostNr = P.PostNr WHERE P.Poststed = 'BØ I TELEMARK';
