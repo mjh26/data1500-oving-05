@@ -74,3 +74,22 @@ SELECT V.Betegnelse, SUM(O.Antall) AS TotaltSolgt FROM Vare V JOIN Ordrelinje O 
 
 --6.Finn navnet på alle ansatte som bor i Bø i Telemark.
 SELECT A.Fornavn, A.Etternavn FROM Ansatt A JOIN Poststed P ON A.PostNr = P.PostNr WHERE P.Poststed = 'BØ I TELEMARK';
+
+--Oppgave 5 del 2
+--1.Finn antall ansatte som **ikke** har fått bonus.
+SELECT COUNT(*) FROM Ansatt WHERE Bonus IS NULL;
+
+--2.Beregn gjennomsnittlig bonus for alle ansatte, men behandle de som ikke har fått bonus som om de har 0 i bonus.
+SELECT AVG(COALESCE(Bonus, 0)) AS GjennomsnittBonus FROM Ansatt;
+
+--3.List opp alle kunder som **ikke** har registrert et telefonnummer.
+SELECT Fornavn, Etternavn FROM Kunde WHERE Telefon IS NULL;
+
+--4.Finn den totale lønnskostnaden (Årslønn + Bonus) for alle ansatte. Pass på at ansatte uten bonus også blir med i den totale summen.
+SELECT SUM(Årslønn + COALESCE(Bonus, 0)) AS TotalLønnskostnad FROM Ansatt;
+
+--5.List opp alle stillinger og antall ansatte i hver stilling som har en bonus registrert.
+SELECT Stilling, COUNT(*) AS AntallMedBonus FROM Ansatt WHERE Bonus IS NOT NULL GROUP BY Stilling;
+
+--6.Finn den laveste bonusen som er gitt ut (ignorer de som ikke har fått bonus).
+SELECT MIN(BONUS) AS LavesteBonus FROM Ansatt WHERE Bonus IS NOT NULL;

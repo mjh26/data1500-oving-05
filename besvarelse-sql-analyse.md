@@ -83,6 +83,7 @@ Forklar hva følgende SQL-spørringer gjør, og hvorfor resultatene blir som de 
     ```
     **Forklaring:**
     *   *... Skriv din forklaring her ...*
+Velge alle rader i tabell ansatt, og teller rader der bonus både er NULL og ikke.
 
 2.  **Spørring:**
     ```sql
@@ -90,6 +91,7 @@ Forklar hva følgende SQL-spørringer gjør, og hvorfor resultatene blir som de 
     ```
     **Forklaring:**
     *   *... Skriv din forklaring her ...*
+Velger å beregne gjennomsnitt av bonus i tabell ansatt som kun har bonus-verdi, dvs. NULL-verdier tas ikke med.
 
 3.  **Spørring:**
     ```sql
@@ -97,6 +99,7 @@ Forklar hva følgende SQL-spørringer gjør, og hvorfor resultatene blir som de 
     ```
     **Forklaring:**
     *   *... Skriv din forklaring her ...*
+Viser navn i tabell ansatt med bonus hvor man erstatter NULL med verdi 0 som gjør at alle får tallverdi, selv om bonus mangler.
 
 4.  **Spørring:**
     ```sql
@@ -104,6 +107,8 @@ Forklar hva følgende SQL-spørringer gjør, og hvorfor resultatene blir som de 
     ```
     **Forklaring:**
     *   *... Skriv din forklaring her ...*
+Velger å gruppere alle ansatte etter stilling, og summerer årslønn og bonus. Hvis bonus er NULL, blir resultatet NULL, ellers 
+blir NULL-verdier ignorert.
 
 ## Oppgave 6: Tre-verdi Logikk (TRUE, FALSE, UNKNOWN)
 
