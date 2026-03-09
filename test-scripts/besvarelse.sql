@@ -93,3 +93,17 @@ SELECT Stilling, COUNT(*) AS AntallMedBonus FROM Ansatt WHERE Bonus IS NOT NULL 
 
 --6.Finn den laveste bonusen som er gitt ut (ignorer de som ikke har fått bonus).
 SELECT MIN(BONUS) AS LavesteBonus FROM Ansatt WHERE Bonus IS NOT NULL;
+
+--Oppgave 6 del 2
+--1.Finn alle ordrer som **verken** er bekreftet betalt eller bekreftet ikke-betalt (dvs. de hvor logikken er `UNKNOWN`).
+SELECT * FROM Ordre WHERE ErBetalt IS NULL;
+
+--2.List opp alle ansatte som har en bonus som er enten `NULL` eller mindre enn 6000.
+SELECT Fornavn, Etternavn, Bonus FROM Ansatt WHERE Bonus IS NULL OR Bonus < 6000;
+
+--3.Finn antall kunder som **ikke** har telefonnummer `41234567` (pass på å inkludere de med `NULL` telefonnummer i tellingen).
+SELECT COUNT(*) FROM Kunde WHERE Telefon IS DISTINCT FROM '41234567';
+
+--4.List opp alle ordrer som er betalt (`ErBetalt = TRUE`), men hvor `SendtDato` er `NULL`.
+SELECT * FROM Ordre WHERE ErBetalt = TRUE AND SendtDato IS NULL;
+

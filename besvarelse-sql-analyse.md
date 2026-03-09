@@ -124,6 +124,7 @@ Forklar resultatet av følgende SQL-spørringer. Hvorfor returnerer de det de gj
     ```
     **Forklaring:**
     *   *... Skriv din forklaring her ...*
+Velger å telle alle ordrer der ErBetalt er sann. NULL blir ignorert.
 
 2.  **Spørring:**
     ```sql
@@ -131,6 +132,7 @@ Forklar resultatet av følgende SQL-spørringer. Hvorfor returnerer de det de gj
     ```
     **Forklaring:**
     *   *... Skriv din forklaring her ...*
+Velger å telle alle ordrer der ErBetalt er usann. NULL-verdier blir også ignorert.
 
 3.  **Spørring:**
     ```sql
@@ -138,6 +140,7 @@ Forklar resultatet av følgende SQL-spørringer. Hvorfor returnerer de det de gj
     ```
     **Forklaring:**
     *   *... Skriv din forklaring her ...*
+Velger å telle alle ordrer med verdi, og ikke NULL der ErBetalt er enten sann eller usann.
 
 4.  **Spørring:**
     ```sql
@@ -145,3 +148,4 @@ Forklar resultatet av følgende SQL-spørringer. Hvorfor returnerer de det de gj
     ```
     **Forklaring:**
     *   *... Skriv din forklaring her ...*
+Velger å telle alle ordrer der ErBetalt er NULL, altså om det er hverken sann eller usann.
